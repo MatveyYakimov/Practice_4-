@@ -1,0 +1,40 @@
+#include <iostream>
+#include <ctime>
+#include <string>
+#include <vector>
+#include <climits>
+
+using namespace std;
+
+const int arr_size = 5;
+
+void st(int arr[], const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		int arr_min = INT_MAX;
+		int index_min = 0;
+		for (int j = i; j < size; j++)
+		{
+			if (arr[j] < arr_min)
+			{
+				arr_min = arr[j];
+				index_min = j;
+			}
+		}
+		swap(arr[i], arr[index_min]);
+	}
+	return;
+}
+
+int main()
+{
+
+	int arr[arr_size] = { 20,548,480,4 };
+	st(arr, arr_size);
+	for (int i = 0; i < arr_size; i++)
+	{
+		cout << arr[i] << ' ';
+	}
+	return 0;
+}
